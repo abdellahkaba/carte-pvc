@@ -2,6 +2,7 @@ import Profile from "../components/admin/Profile";
 import Dashboard from "../components/admin/Dashboard";
 
 
+
 const routes = [
     {
         path: 'dashboard',
@@ -15,3 +16,5 @@ const routes = [
 ];
 
 export default routes;
+
+

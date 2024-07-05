@@ -33,6 +33,10 @@ const Sidebar = () => {
                         <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                         Profile
                     </Link>
+                    <Link className="nav-link" to="/admin/profile">
+                        <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        Cartes
+                    </Link>
 
                  
                     <button type='button' onClick={logoutSubmit} className='nav-link btn btn-danger btn-sm text-white'>Deconnexion</button>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import MasterLayout from './layouts/admin/MasterLayout';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const AdminPrivateRoute = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('auth_token'));
@@ -14,6 +15,7 @@ const AdminPrivateRoute = () => {
             }
             setLoading(false);
         }).catch(() => {
+            swal('Erreur', 'Vous n\'êtes pas connecté !', 'error');
             setLoading(false);
         });
     }, []);
