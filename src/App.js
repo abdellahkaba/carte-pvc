@@ -4,12 +4,14 @@ import Register from './components/frontend/auth/Register';
 import Login from './components/frontend/auth/Login';
 import Home from './components/frontend/Home';
 import axios from 'axios';
-import Carte from './components/admin/Carte';
+import Carte from './components/frontend/cartes/Carte';
 import UserCartes from './components/frontend/cartes/UserCartes';
 import CarteDetail from './components/frontend/cartes/CarteDetail';
 import EditCarte from './components/frontend/cartes/EditCarte';
 import ProtectedRoute from './ProtectedRoute';
-import CarteWeb from './components/frontend/cartes/CarteWeb';
+import ForgotPassword from './components/frontend/auth/ForgotPassword';
+import ResetPassword from './components/frontend/auth/ResetPassword';
+
 
 axios.defaults.baseURL = 'http://127.0.0.1:9000';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -38,6 +40,8 @@ function App() {
                     <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
+                    <Route path="/reset-password/:token" element={<ResetPassword />} />
                     <Route path="/carte" element={<ProtectedRoute><Carte /></ProtectedRoute>} />
                     <Route path="/user-cartes" element={<ProtectedRoute><UserCartes /></ProtectedRoute>} />
                     <Route path="/carte-detail/:id" element={<ProtectedRoute><CarteDetail /></ProtectedRoute>} />
